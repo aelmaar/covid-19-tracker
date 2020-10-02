@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+* {
+    margin:0;
+    font-family: 'Secular One', sans-serif;
+}
+//function 
+@mixin flexCenter($justify) {
+    display:flex;
+    justify-content:$justify;
+    align-items: center;
+}
+// variables
+$clrPrimaryCases: rgba(255,0,0,.7);
+$clrPrimaryRecovered:rgba(0,250,0,.7);
+$clrPrimaryDeaths: rgba(250,0,0,.4);
+$mrgBottom:20px;
+
+.app__explain {
+    text-align: center;
+    display:none;
+    .explain {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        z-index:100;
+        .righted {
+            text-align: right;
+            button {
+                background:none;
+                border:none;
+                font-size:30px;
+                cursor: pointer;
+            }
+        }
+        .flexed {
+            @include flexCenter(space-between);
+            button {
+                background:none;
+                border:none;
+                font-size:30px;
+                color:rgba(0,0,0,.7);
+                cursor: pointer;
+            }
+            img {
+                width:700px;
+                height:270px;
+                object-fit: cover;
+            }
+        }
+    }
+    &::before {
+        content:'';
+        position:absolute;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        background-blend-mode: overlay;
+        background:rgba(0,0,0,.8);
+        opacity:1;
+        z-index:10
+    }
+}
+.visible {
+    display:block
+}
+.positioned {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+.app {
+    @include flexCenter(space-around);
+    align-items:unset;
+    flex-direction: column;
+    margin-top:20px;
+    .app__left {
+        .app__header {
+            @include flexCenter(space-between);
+            margin-bottom: 20px;
+            h1 {
+                font-size:20px
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                display: inline-block;
+                #outlined-search {
+                    width:150px;
+                    padding:1rem;
+                }
+                .centered {
+                    position: absolute;
+                    top: 100%;
+                    width: 100%;
+                    ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        li {
+                            text-align: justify;
+                            margin: 0.5rem;
+                            margin: 0;
+                            width: 100%;
+                            .MuiButtonBase-root {
+                                width: 100%;
+                                text-align: justify;
+                                border-radius: 0;
+                                z-index:1;
+                            }
+                        }
+                    }
+                }
+            }
+            @media all and (min-width:600px) {
+                h1 {
+                    font-size:30px;
+                }
+                form {
+                    #outlined-search {
+                        width:223px;
+                        padding:auto;
+                    }
+                }
+            }
+        }
+        .app__global {
+            @include flexCenter(space-between);
+            margin-bottom:$mrgBottom;
+            img {
+                animation:mymove 950ms infinite
+            }
+            @keyframes mymove {
+                0%{opacity:.5}
+                25%{opacity:.7}
+                50%{opacity:1}
+                75%{opacity:.7}
+                100%{opacity:.5}
+            }
+        }
+        .app__stats {
+            margin-bottom: $mrgBottom;
+            @include flexCenter(space-around);
+            .card {
+                flex:0.3;
+                text-align: center;
+                cursor: pointer;
+                h3 {
+                    font-size:16px
+                }
+                p {
+                    font-size:12px
+                }
+            }
+            .selected--cases {
+                border-top:15px solid #CC1034;
+            }
+            .selected--recovered {
+                border-top:15px solid #7dd71d;
+            }
+            .selected--deaths {
+                border-top:15px solid #fb4443;
+            }
+            @media all and (max-width:350px) {
+                .card {
+                    h3 {
+                        font-size:14px;
+                    }
+                    p {
+                        font-size:10px
+                    }
+                }
+            }
+            @media all and (min-width:700px) {
+                .card {
+                    h3 {
+                        font-size:40px;
+                    }
+                    p {
+                        font-size:inherit
+                    }
+                }
+            }
+        }
+        .app__graph {
+            margin-bottom: $mrgBottom;
+            h2 {
+                text-transform: capitalize !important;
+            }
+            .error {
+                @include flexCenter(flex-start)
+            }
+        }
+        .app__table{
+            height:300px;
+            margin-bottom: $mrgBottom;
+            .resize {
+                height:300px;
+            }
+        }
+        
+    }
+    
+    .app__right {
+        height:500px;
+        .map {
+            height:100%;
+            background-color: white;
+            .leaflet-container {
+                height:100%;
+                z-index:0
+            }
+        }
+    }
+}
+.app__social {
+    
+    position: fixed;
+    bottom:20px;
+    right:10px;
+    z-index:2;
+    .information {
+        width:250px;
+        display:none;
+    }
+    .visible {
+        display:block;
+    }
+    .righted {
+        @include flexCenter(flex-end);
+        a {
+            font-size:30px;
+            .fab {
+                margin:.3rem
+            }
+            .fa-facebook {
+                color:rgba(0, 140, 255, 1)
+            }
+            .fa-instgram {
+                color:rgba(255, 0, 149, 1)
+            }
+            .fab:hover {
+                transition: all ease .4s;
+                transform: scale(1.5,1.5);
+            }
+        } 
+    }
+    
+}
+@media all and (min-width:1000px) {
+    .app {
+        flex-direction: row;
+        .app__left {
+            width:40%;
+            .app__stats {
+                .card {
+                    h3 {
+                        font-size:20px
+                    }
+                    p {
+                        font-size:14px
+                    }
+                }
+               
+            }
+        }
+        .app__right {
+            height:auto;
+            width:60%
+        }
+        .app__graph {
+            margin-bottom: 0;
+        }
+        
+    }
+    
+    
+}
