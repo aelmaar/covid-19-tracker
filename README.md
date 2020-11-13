@@ -1,68 +1,30 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# covid-19-tracker
+covid 19 tracker using the production build of react 
+https://covid-19-tracker20.web.app/
 
-## Available Scripts
+## dependencies using:
+* @material-ui/core
+* react-circular-progressbar
+* react-chartjs-2 chart.js
+* react-leaflet leaflet
+* numeral
+## covid 19 api using:
+https://disease.sh/docs/ its completely free
+## technologies using:
+react Hooks(useState,useEffect,useRef)
+### note:
+- How did I used the circular progressbar in this project?
+per default the max value is 100 and min value is 0 then the value you choose what you want from 0 to 100,
+Her in this project what I have been used as a max value is new (cases-recovered-deaths) of the worldwide,
+then the value is new(cases-recovered-deaths) of the country you selected and of course the min value 0.
 
-In the project directory, you can run:
+- What did I used on the line graph? firstly I used the historical data of the last 120 days and all that from the api,
+then the total(cases-recoevered-deaths) of the new day minus the total(cases-recovered-deaths) of the day before to saw how much it increased
+lets take an exemple in USA yesterday '10/01/2020' total cases:7277759 and before it '9/30/2020' total cases:7234007 
+so if we substract 7277759 with 7234007 the result is 43752 now you seen the new cases, I though you understood :)
 
-### `npm start`
+I hope you guys enjoy the project and if there any issue or something you dont undethand it I wiil be happy to answer you
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+from Anouar El Maaroufi
+- my facebook: https://www.facebook.com/anouar.elmaaroufi.96
+- my instagram: https://www.instagram.com/anouarelmaaroufi10/
