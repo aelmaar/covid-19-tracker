@@ -69,6 +69,7 @@ function LineGraph({countryCode,casesType}) {
             .then(data => {
                 const dataChart = countryCode !== 'worldwide'? printChartDataCountries(data,casesType):printChartDataGlobal(data,casesType)
                 setData(dataChart);
+                setError('')
             })
             .catch(error => setError('country doesnt have any historical data'))
         }
@@ -77,7 +78,7 @@ function LineGraph({countryCode,casesType}) {
     
     return (
         <div>
-            {data?.length > 0 && 
+            {!error ? 
                 <Line 
                     data={{
                         datasets:[{
@@ -87,8 +88,7 @@ function LineGraph({countryCode,casesType}) {
                     }}
                     options={options}
                 />
-            }
-            {error && 
+              :
               <div className='error'>
               <img width='150' src={notfound} alt='not found'/>
               <h4 style={{display:'inline-block',color:'rgba(0,0,0,.6)',textTransform:'capitalize'}}>country doesnt have any historical data</h4>
