@@ -26,5 +26,5 @@ so if we substract 7277759 with 7234007 the result is 43752 now you seen the new
 I hope you guys enjoy the project and if there any issue or something you dont undethand it I wiil be happy to answer you
 
 from Anouar El Maaroufi
-- my facebook: https://www.facebook.com/anouar.elmaaroufi.96
-- my instagram: https://www.instagram.com/anouarelmaaroufi10/
+- my facebook: https://www.facebook.com/anouar.elmaaroufi.96/
+- my Linkedin: www.linkedin.com/in/anouarelmaaroufi
